@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   API_URL: 'https://api.spaceXdata.com/v3/',
+  DEVELOPER_NAME: 'Pritam Gyaneswar',
 };
 
 /*

@@ -26,3 +26,20 @@ h6 {
 .pl-2 {
   padding-left: 2rem;
 }
+.bg-image {
+  background-color: rgb(236, 235, 235);
+}
+.title {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 12px;
+}
+.dis-inline-block {
+  display: inline-block;
+}
+.li-none {
+  list-style: none;
+}
+.dis-block {
+  display: block;
+}

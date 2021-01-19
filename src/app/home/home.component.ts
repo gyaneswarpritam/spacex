@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { CommonService } from './../services/common.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   spaceList: any[];
+  developerName: string;
   constructor(private commonService: CommonService) {
     this.commonService.spaceData.subscribe((data) => {
       this.spaceList = data;
@@ -15,6 +17,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.developerName = environment.DEVELOPER_NAME;
     this.commonService.getData('launches?limit=100');
   }
 }

@@ -9,13 +9,10 @@
     <div class="row" *ngIf="spaceList.length > 0">
       <div class="col-3 col-s-6 col-m-12" *ngFor="let space of spaceList">
         <div class="card">
-          <div class="" style="background-color: rgb(236, 235, 235)">
+          <div class="bg-image">
             <img [src]="space?.links?.mission_patch_small" width="100%" />
           </div>
-          <a
-            style="margin-top: 0.4rem"
-            style="text-decoration: none; font-weight: bold; font-size: 12px"
-            [routerLink]="['/']"
+          <a class="title" [routerLink]="['/']"
             >{{
               space?.mission_name?.length > 18
                 ? (space?.mission_name | slice: 0:18) + ".."
@@ -24,7 +21,7 @@
             #{{ space?.flight_number }}</a
           >
           <div>
-            <div style="display: inline-block">
+            <div class="dis-inline-block">
               <h6 class="mission_head">Mission Ids:</h6>
             </div>
             <ul *ngIf="space?.mission_id?.length > 0" class="mission_list">
@@ -34,21 +31,20 @@
             </ul>
             <ul
               *ngIf="space?.mission_id?.length == 0"
-              class="mission_list"
-              style="list-style: none"
+              class="mission_list li-none"
             >
               <li>NA</li>
             </ul>
             <!-- <p class="view pl-2" *ngIf="space?.mission_id?.length == 0">N/A</p> -->
-            <div style="display: block">
+            <div class="dis-block">
               <h6 class="mission_head">Lunch Year:</h6>
               <p class="view">{{ space?.launch_year }}</p>
             </div>
-            <div style="display: block">
+            <div class="dis-block">
               <h6 class="mission_head">Successful Lunch:</h6>
               <p class="view">{{ space?.launch_success }}</p>
             </div>
-            <div style="display: block">
+            <div class="dis-block">
               <h6 class="mission_head">Successful Landing:</h6>
               <p class="view">
                 {{
@@ -62,5 +58,9 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="col-12 col-s-12 col-m-12 center">
+    <b>Developed By :</b> {{ developerName }}
   </div>
 </div>
