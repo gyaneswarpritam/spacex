@@ -1,0 +1,48 @@
+<div class="inner-content">
+  <h4 style="margin: 0">Filters</h4>
+  <p class="center">Launch Year</p>
+  <hr />
+  <div class="row">
+    <div class="col-6 col-s-6 col-m-6 center" *ngFor="let year of years">
+      <button
+        class="btn"
+        (click)="searchFilter({ yearSearch: year })"
+        [ngClass]="year.active ? 'active' : ''"
+      >
+        {{ year?.year }}
+      </button>
+    </div>
+  </div>
+  <p class="center">Successful Launch</p>
+  <hr />
+  <div class="row">
+    <div
+      class="col-6 col-s-6 col-m-6 center"
+      *ngFor="let launch of launchValues"
+    >
+      <button
+        class="btn"
+        (click)="searchFilter({ launchSearch: launch })"
+        [ngClass]="launch.active ? 'active' : ''"
+      >
+        {{ launch.value }}
+      </button>
+    </div>
+  </div>
+  <p class="center">Successful Landing</p>
+  <hr />
+  <div class="row">
+    <div
+      class="col-6 col-s-6 col-m-6 center"
+      *ngFor="let landing of landingValues"
+    >
+      <button
+        class="btn"
+        (click)="searchFilter({ landingSearch: landing })"
+        [ngClass]="landing.active ? 'active' : ''"
+      >
+        {{ landing.value }}
+      </button>
+    </div>
+  </div>
+</div>
